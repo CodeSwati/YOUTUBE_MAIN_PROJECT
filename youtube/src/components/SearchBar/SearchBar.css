@@ -1,0 +1,49 @@
+.searchBar_container{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+}
+.searchBar_container2{
+    margin: auto;
+}
+.search_div{
+    display: flex;
+    margin: auto;
+    position:relative ;
+    z-index: 100;
+}
+.ibox_searchbar{
+    background-color:rgb(18,18,18);
+    width: 30rem;
+    border: 1px solid rgba(128,128,128,0.4);
+    color:white;
+    font-size:large ;
+    padding: 0.2rem;
+    height: 2rem;
+    padding-left: 2rem;
+}
+.search_icon{
+    cursor: pointer;
+    padding: 0.75rem;
+    width: 2rem;
+    border-radius: 0.1rem;
+    background-color: rgb(43,43,43);
+    color: aliceblue;
+}
+.search_icon:hover{
+    background-color: black;
+}
+
+.mic, .video_icon,.bell_icon{
+    color: whitesmoke;
+    margin: auto 0.7rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.mic{
+    border-radius: 100%;
+    padding: 0.5rem;
+    background-color:rgb(51,51,51);
+    
+}

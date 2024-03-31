@@ -1,0 +1,72 @@
+.logo > img{
+   height: 45px;
+   width: 45px;
+}
+
+.container_navbar{
+    border: 1px solid;
+    display: flex;
+    height:calc(3.5rem - 2px);
+    background-color:black;
+}
+.burger_logo_navbar{
+    display: flex;
+    height:3.5rem;
+}
+.burger{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    border-radius:100%;
+}
+
+.burger p{
+    margin: 0.5px;
+    width: 1.2rem;
+    height: 0.1rem;
+    background-color:white;
+}
+.logo{
+    display: flex;
+}
+.logo_title{
+    margin: auto;
+    color: white;
+    font-size:1.4vw ;
+    font-weight: bold;
+}
+
+.apps_boxes{
+    width:25px;
+    margin: auto 0.7rem;
+    height: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.app_box{
+    border: 1px solid white;
+    margin: 0.1rem;
+    width: 2px;
+    height: 2px;
+}
+.auth_cont_navbar{
+    width: fit-content;
+    margin: auto 0.5rem;
+    position: relative;
+    display: flex;
+}
+.auth_btn{
+    cursor: pointer;
+    color: #3ea6ff;
+    background-color: rgb(36,36,36);
+    border: 2px solid;
+    padding: 0.4rem;
+    border-radius: 0.1rem;
+}
