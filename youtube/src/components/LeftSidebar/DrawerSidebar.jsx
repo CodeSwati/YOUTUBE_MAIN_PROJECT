@@ -3,13 +3,14 @@ import './LeftSidebar.css';
 import {FaHistory} from "react-icons/fa"
 import {  AiFillLike, AiFillPlaySquare, AiOutlineHome } from 'react-icons/ai';
 import { MdOutlineExplore, MdOutlineSubscriptions, MdOutlineVideoLibrary, MdOutlineWatchLater } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
 
-function DrawerSidebar() {
+function DrawerSidebar({toggleDrawer, toggleDrawerSidebar}) {
   return (
-    <div className='container_DrawerLeftSidebar'>
+    <div className='container_DrawerLeftSidebar ' style={toggleDrawerSidebar}>
         <div className='container2_DrawerLeftSidebar'>
            <div className='Drawer_leftsidebar'>
-               <div className="icon_sidebar_div">
+               <NavLink to={'/'} className="icon_sidebar_div">
                 <p>
                     <AiOutlineHome 
                     size={22} 
@@ -18,7 +19,7 @@ function DrawerSidebar() {
                     />
                     <div className="text_sidebar_icon">Home</div>
                 </p>
-               </div>
+               </NavLink>
                <div className='icon_sidebar_div'>
                 <p>
                         <MdOutlineExplore
@@ -42,7 +43,7 @@ function DrawerSidebar() {
                </div>    
            </div>
            <div className="libraryBtn_Drawerleftsidebar">
-                <div className='icon_sidebar_div'>
+                    <NavLink to={'/library'} className='icon_sidebar_div'>
                         <p>
                                 <MdOutlineVideoLibrary
                                 size={22} 
@@ -51,7 +52,7 @@ function DrawerSidebar() {
                                 />
                                 <div className="text_sidebar_icon">Library</div>
                             </p>
-                    </div>  
+                    </NavLink>  
                     <div className='icon_sidebar_div'>
                         <p>
                             <FaHistory
@@ -119,7 +120,10 @@ function DrawerSidebar() {
                 <div>Chanel</div>
               </div>
            </div>
-        </div>
+         </div>
+         <div className="container3_DrawerLeftSidebar"
+         onClick={()=> toggleDrawer()}
+         ></div>
         </div>
   )
 }

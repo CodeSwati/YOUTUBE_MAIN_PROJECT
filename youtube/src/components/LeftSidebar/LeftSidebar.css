@@ -1,6 +1,6 @@
 .container_leftsidebar{
     background-color:rgb(25,25,25);
-    width:5.7rem;
+    width:9rem;
     height: calc(100vh - 3.55rem);
     box-sizing: border-box;
     overflow-y: auto;
@@ -18,7 +18,7 @@
 .text_sidebar_icon{
     text-align: center;
     font-weight: 300;
-    font-size: 0.85rem;
+    font-size: 1rem;
     padding: 0.2rem;
 }
 .icon_sidebar_div:hover,
@@ -32,6 +32,7 @@
 .container_DrawerLeftSidebar{
     height: calc(100vh - 3.6rem);
     position: absolute;
+    display: flex;
     width: 100vw;
     overflow-y: auto;
     z-index: 500;
@@ -80,4 +81,8 @@
 .chanel_lsdbar div{
     margin:auto;
     width: 60%;
+}
+.container3_DrawerLeftSidebar{
+   flex-grow: 1;
+   background-color: rgba(0, 0, 0, 0.488);
 }
