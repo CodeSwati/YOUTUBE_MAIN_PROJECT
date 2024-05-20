@@ -5,6 +5,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
+import DrawerSidebar from './components/LeftSidebar/DrawerSidebar';
 
 
 function App() {
@@ -12,9 +13,12 @@ function App() {
   return (
     <Router >
       <Navbar/>
+      {
+        <DrawerSidebar/>
+      }
      <AllRoutes/>
     </Router>
-  )
+  );
 }
 
 export default App

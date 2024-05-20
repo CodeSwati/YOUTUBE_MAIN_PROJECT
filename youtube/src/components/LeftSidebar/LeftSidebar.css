@@ -26,3 +26,58 @@
     color: aliceblue;
     background-color: rgb(65,65,65);
 }
+
+/* drawer sidebar */
+
+.container_DrawerLeftSidebar{
+    height: calc(100vh - 3.6rem);
+    position: absolute;
+    width: 100vw;
+    overflow-y: auto;
+    z-index: 500;
+}
+
+.container2_DrawerLeftSidebar{
+    height: calc(100vh - 3.6rem);
+    position: absolute;
+    background-color: rgb(28,28,28);
+    width: 15rem;
+    overflow-y: auto;
+}
+
+.Drawer_leftsidebar,
+.libraryBtn_Drawerleftsidebar{
+    padding-top: 0.5rem;
+    border-bottom: 2px solid rgba(128,128,128,0.293);
+}
+
+.icon_sidebar_div p{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.subScriptions_lsdbar{
+    color: white;
+}
+.subScriptions_lsdbar h3{
+    text-decoration: underline;
+    margin: 20px 10px;
+}
+.chanel_lsdbar{
+    display: flex;
+    cursor: pointer;
+}
+.chanel_lsdbar:hover{
+    color: rgb(77,77,243);
+}
+.chanel_lsdbar p{
+    border: 1px solid;
+    background-color: gray;
+    padding: 0.5rem;
+    border-radius: 100%;
+    margin: 1rem;
+}
+.chanel_lsdbar div{
+    margin:auto;
+    width: 60%;
+}

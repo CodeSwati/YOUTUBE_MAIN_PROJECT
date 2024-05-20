@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar/SearchBar'
 import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
 
@@ -22,10 +23,10 @@ function Navbar() {
              <p></p>
              <p></p>
            </div>
-            <div className='logo'>
+            <NavLink to={'/'} className='logo'>
                 <img src='https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png'/>
                 <p className='logo_title'>YouTube</p>
-            </div>
+            </NavLink>
        </div>
        
        <SearchBar/>
