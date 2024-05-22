@@ -53,7 +53,7 @@ function DrawerSidebar({toggleDrawer, toggleDrawerSidebar}) {
                                 <div className="text_sidebar_icon">Library</div>
                             </p>
                     </NavLink>  
-                    <div className='icon_sidebar_div'>
+                    <NavLink to={'/watchhistory'} className='icon_sidebar_div'>
                         <p>
                             <FaHistory
                             size={22} 
@@ -62,9 +62,9 @@ function DrawerSidebar({toggleDrawer, toggleDrawerSidebar}) {
                             />
                             <div className="text_sidebar_icon">History</div>
                         </p>
-                    </div> 
+                    </NavLink> 
 
-                    <div className='icon_sidebar_div'>
+                    <NavLink to={'/yourvideos'} className='icon_sidebar_div'>
                        <p>
                         <AiFillPlaySquare
                         size={22} 
@@ -73,9 +73,9 @@ function DrawerSidebar({toggleDrawer, toggleDrawerSidebar}) {
                         />
                         <div className="text_sidebar_icon"> Your Videos</div>
                       </p>
-                    </div>   
+                    </NavLink>   
 
-                    <div className='icon_sidebar_div'>
+                    <NavLink to={'/watchlater'} className='icon_sidebar_div'>
                        <p>
                         <MdOutlineWatchLater
                         size={22} 
@@ -84,9 +84,9 @@ function DrawerSidebar({toggleDrawer, toggleDrawerSidebar}) {
                         />
                         <div className="text_sidebar_icon">Watch Later</div>
                       </p>
-                    </div>   
+                    </NavLink>   
 
-                    <div className='icon_sidebar_div'>
+                    <NavLink to={'/likedvideo'} className='icon_sidebar_div'>
                        <p>
                         <AiFillLike
                         size={22} 
@@ -95,7 +95,7 @@ function DrawerSidebar({toggleDrawer, toggleDrawerSidebar}) {
                         />
                         <div className="text_sidebar_icon"> Liked Videos</div>
                       </p>
-                    </div>   
+                    </NavLink>   
            </div>
            <div className="subScriptions_lsdbar">
               <h3>Your Subscription</h3>

@@ -7,10 +7,11 @@ import {
     Link
   } from "react-router-dom";
 import Library from '../pages/Library/Library';
-import YourVideo from '..pages/YourVideo/YourVideo';
-import WatchHistory from '..pages/WatchHistory/WatchHistory';
-import WatchLater from '..pages/WatchLater/WatchLater';
-import LikedVideo from '..pages/LikedVideo/likedvideo'
+import YourVideo from '../pages/YourVideo/YourVideo';
+import WatchHistory from '../pages/WatchHistory/WatchHistory';
+import WatchLater from '../pages/WatchLater/WatchLater';
+import LikedVideo from '../pages/LikedVideo/LikedVideo'
+import VideoPage from '../pages/VideoPage/VideoPage';
 
 function AllRoutes() {
   return (
@@ -21,6 +22,8 @@ function AllRoutes() {
         <Route path='/watchhistory' element={<WatchHistory/>} />
         <Route path='/watchlater' element={<WatchLater/>} />
         <Route path='/likedvideo' element={<LikedVideo/>} />
+        <Route path='/videopage/:vid' element={<VideoPage/>} />
+        
 
     </Routes>
   )
