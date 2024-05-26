@@ -6,6 +6,7 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import DrawerSidebar from './components/LeftSidebar/DrawerSidebar';
+import CreateEditChannel from './pages/Channel/CreateEditChannel';
 
 
 function App() {
@@ -24,10 +25,16 @@ function App() {
           })
         }
    }
+  const [editcreatebtn , setEditcreatebtn] = useState(false);
 
   return (
     <Router >
-      <Navbar
+      {
+        editcreatebtn && <CreateEditChannel setEditcreatebtn={setEditcreatebtn}/>
+      }
+      
+      <Navbar 
+      setEditcreatebtn={setEditcreatebtn}
       toggleDrawer={toggleDrawer}
       />
       {

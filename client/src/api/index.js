@@ -1,6 +1,7 @@
 import axios from 'axios'
+
 const API = axios.create({baseURL : `http://localhost:5500/`})
-API.interceptors.request.use(req=> {
+API.interceptors.request.use(req => {
     if(localStorage.getItem('Profile')){
         req.headers.authorization = `Bearer ${JSON.parse(localStorage.getItem('Profile')).token}`
 
@@ -9,3 +10,5 @@ API.interceptors.request.use(req=> {
 })
 
 export const login = (authData)=> API.post('/user/login', authData);
+
+export const updateChannelData =(id, updateData)=> API.patch(`/use/update/${id}`, updateData);

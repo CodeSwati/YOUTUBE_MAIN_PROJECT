@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import './Comments.css'
-function DisplayComment({cid,commentsbody, usercommentd}) {
-    const [commentbody, setCommentbody] = useState("");
+function DisplayComment({cid,commentbody, usercommentd}) {
+    const [cmtbody, setCmtbody] = useState("");
     const [edit, setEdit] = useState(false);
 
     const handleedit=(ctid,ctbdy)=>{
         setEdit(true);
-        setCommentbody(ctbdy);
+        setCmtbody(ctbdy);
     }
 
     const handleonsubmit=(e)=>{
@@ -20,22 +20,22 @@ function DisplayComment({cid,commentsbody, usercommentd}) {
         edit ? (<>
         <form className='comments_sub_form_comments' onSubmit = {handleonsubmit} >
             <input type='text ' placeholder='edit comment....' 
-            value={commentbody} 
+            value={cmtbody} 
             className='comment_ibox'
-            onChange={(e)=> setCommentbody(e.target.value)} 
+            onChange={(e)=> setCmtbody(e.target.value)} 
             />
             <input type='submit' value='change' className='comments_add_btn_comments'/>
        </form>
 
          </>
          ) : (
-            <p className='comment_body'> {commentsbody} </p>  
+            <p className='comment_body'> {commentbody} </p>  
          )}
 
 
             <p className="usercommented"> - {usercommentd} commented</p>
             <p className="editdel_displaycomment">
-              <i onClick={()=> handleedit(cid,commentsbody)}>Edit</i>
+              <i onClick={()=> handleedit(cid,commentbody)}>Edit</i>
               <i>Delete</i>
        </p>
     </>

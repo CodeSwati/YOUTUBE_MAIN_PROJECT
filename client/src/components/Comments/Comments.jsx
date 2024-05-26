@@ -6,17 +6,17 @@ function Comments() {
     const commentsList =[
     { 
         id: "1",
-       commentsbody : "hello",
+       commentbody : "hello",
         usercommentd: "abc"
      },
      {
         id: "2",
-        commentsbody : "hill",
+        commentbody : "hill",
         usercommentd: "pot"
      },
      {
         id: "3",
-        commentsbody : "hplo",
+        commentbody : "hplo",
         usercommentd: "cpo"
      },
     ]
@@ -37,7 +37,7 @@ function Comments() {
                return (
                 <DisplayComment 
                 cid={m.id}
-                commentsbody = {m.commentsbody} 
+                commentbody = {m.commentbody} 
                 usercommentd = {m.usercommentd}
                 />
                )
