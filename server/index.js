@@ -6,6 +6,7 @@ import cors from 'cors';
 import bodyParser from "body-parser";
 
 dotenv.config();
+
 const app = express()
 
 app.use(cors())
@@ -22,7 +23,6 @@ const port = process.env.PORT || 5500;
 app.listen( port , ()=>{
     console.log(`server running on the port ${port}`)
 });
-
 const db_url = process.env.CONNECTION_URL;
 //console.log(db_url);
 mongoose.connect(db_url, {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
