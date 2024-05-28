@@ -4,6 +4,7 @@ import { GoogleLogout } from 'react-google-login';
 import { BiLogOut } from 'react-icons/bi'
 import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../../actions/currentUser';
+import { Link } from 'react-router-dom';
 
 function Auth({user, setAuthBtn, setEditcreateChannelbtn}) {
     const dispatch = useDispatch();
@@ -37,8 +38,11 @@ function Auth({user, setAuthBtn, setEditcreateChannelbtn}) {
                         {
                         user?.result.name?(
                             <> 
-                            <input type="submit" className='btn_auth' value=" your channel"
-                            onClick={()=> setEditcreateChannelbtn(true)}/>
+                            {
+                                <Link to={`/channel/${user?.result._id}`} className='btn_auth'>
+                                    Your channel
+                                </Link>
+                            }
                             </>
                             ) : ( 
                             <>

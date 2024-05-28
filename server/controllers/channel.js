@@ -11,7 +11,7 @@ export const updateChannelData = async(req,res)=>{
     }
 
     try {
-        const updateData = await users.findByIdAndUpadate(_id,{
+        const updateData = await users.findByIdAndUpdate(_id,{
             $set:{
                 'name': name, 'desc' :desc
             }
@@ -20,5 +20,24 @@ export const updateChannelData = async(req,res)=>{
     } catch (error) {
         res.status(404).json({message : error.message})
         
+    }
+}
+
+export const getAllChannels = async(req, res)=>{
+    try {
+       const allChannels = await users.find();
+       const allChannelDetails = [];
+       allChannels.forEach((channel)=>{
+        allChannelDetails.push({
+            _id: channel._id, 
+            name : channel.name, 
+            email: channel.email,
+            desc: channel.desc
+       });
+       
+    }); 
+    res.status(200).json(allChannelDetails);
+    } catch (error) {
+        res.status(404).json({message : error.message});
     }
 }
