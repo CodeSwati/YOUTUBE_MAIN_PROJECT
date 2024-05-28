@@ -25,16 +25,16 @@ function App() {
           })
         }
    }
-  const [editcreatebtn , setEditcreatebtn] = useState(false);
+  const [editcreateChannelbtn , setEditcreateChannelbtn] = useState(false);
 
   return (
     <Router >
       {
-        editcreatebtn && <CreateEditChannel setEditcreatebtn={setEditcreatebtn}/>
+        editcreateChannelbtn && <CreateEditChannel setEditcreateChannelbtn={setEditcreateChannelbtn}/>
       }
       
       <Navbar 
-      setEditcreatebtn={setEditcreatebtn}
+      setEditcreateChannelbtn={setEditcreateChannelbtn}
       toggleDrawer={toggleDrawer}
       />
       {

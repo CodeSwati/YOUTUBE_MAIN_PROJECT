@@ -16,9 +16,9 @@ export const updateChannelData = async(req,res)=>{
                 'name': name, 'desc' :desc
             }
         },{new: true})
-        res.status(405).json(updateData)
+        res.status(200).json(updateData)
     } catch (error) {
-        res.status(405).json({message : error.message})
+        res.status(404).json({message : error.message})
         
     }
 }

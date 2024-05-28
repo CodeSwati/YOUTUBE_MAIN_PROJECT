@@ -14,7 +14,7 @@ import { useState } from 'react';
 
 
 
-function Navbar({toggleDrawer, setEditcreatebtn}) {
+function Navbar({toggleDrawer, setEditcreateChannelbtn}) {
   const [AuthBtn, setAuthBtn] = useState(false);
 
   // const currentUser=null;
@@ -128,7 +128,7 @@ function Navbar({toggleDrawer, setEditcreatebtn}) {
     {
       AuthBtn &&  
       <Auth
-      setEditcreatebtn={setEditcreatebtn}
+      setEditcreateChannelbtn={setEditcreateChannelbtn}
       setAuthBtn ={setAuthBtn}
       user= {currentUser}
       />

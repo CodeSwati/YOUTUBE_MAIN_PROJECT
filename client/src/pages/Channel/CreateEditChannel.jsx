@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../actions/auth';
 import { updateChannelData } from '../../actions/channelUser';
 
-function CreateEditChannel({setEditcreatebtn}) {
+function CreateEditChannel({setEditcreateChannelbtn}) {
 
     // const currentUser={
     //     result:{
@@ -27,16 +27,16 @@ function CreateEditChannel({setEditcreatebtn}) {
         name:name,
         desc:desc,
       }));
-      setEditcreatebtn(false);
+      setEditcreateChannelbtn(false);
       setTimeout(() => {
-        dispatch(login({email: currentUser?.result.email}))
+        dispatch(login({email: currentUser?.result.email}));
       }, 5000);
     }
    } 
 
   return (
     <div className='container_createEditChannel'>
-        <input type='submit' onClick={()=>setEditcreatebtn(false)}
+        <input type='submit' onClick={()=>setEditcreateChannelbtn(false)}
         name='text'
         value={"X"} className='ibtn_x' 
         />
