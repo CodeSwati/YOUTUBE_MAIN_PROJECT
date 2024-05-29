@@ -9,7 +9,7 @@ import DrawerSidebar from './components/LeftSidebar/DrawerSidebar';
 import CreateEditChannel from './pages/Channel/CreateEditChannel';
 import { useDispatch } from 'react-redux';
 import { fetchAllChannel } from './actions/channelUser';
-
+import VideoUpload from './pages/VideoUpload/VideoUpload'
 
 function App() {
 
@@ -34,10 +34,16 @@ function App() {
           })
         }
    }
+
+   const [viduploadpage, setViduploadpage] = useState(false);
+   
   const [editcreateChannelbtn , setEditcreateChannelbtn] = useState(false);
 
   return (
     <Router >
+      {
+        viduploadpage && <VideoUpload setViduploadpage={setViduploadpage}/>
+      }
       {
         editcreateChannelbtn && <CreateEditChannel setEditcreateChannelbtn={setEditcreateChannelbtn}/>
       }
@@ -52,7 +58,7 @@ function App() {
         toggleDrawerSidebar={toggleDrawerSidebar}
         />
       }
-     <AllRoutes setEditcreateChannelbtn={setEditcreateChannelbtn}/>
+     <AllRoutes setViduploadpage={setViduploadpage} setEditcreateChannelbtn={setEditcreateChannelbtn}/>
     </Router>
   );
 }

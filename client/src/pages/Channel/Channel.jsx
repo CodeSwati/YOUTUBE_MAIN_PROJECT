@@ -5,7 +5,7 @@ import vid from '../../components/Video/vid.mp4'
 import DescribeChannel from './DescribeChannel';
 import { useParams } from 'react-router';
 
-function Channel({setEditcreateChannelbtn}) {
+function Channel({setEditcreateChannelbtn, setViduploadpage}) {
 
    const {Cid} = useParams();
 
@@ -47,7 +47,11 @@ function Channel({setEditcreateChannelbtn}) {
         <div className='container_pages_app'>
           <LeftSidebar/>
             <div className='container2_pages_app'> 
-            <DescribeChannel Cid ={Cid} setEditcreateChannelbtn={setEditcreateChannelbtn}/>
+            <DescribeChannel Cid ={Cid} 
+            
+            setViduploadpage={setViduploadpage}
+
+            setEditcreateChannelbtn={setEditcreateChannelbtn}/>
             <ShowVideoGrid vids={vids}/>
             </div>
         </div>
