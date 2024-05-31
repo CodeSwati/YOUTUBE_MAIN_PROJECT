@@ -21,3 +21,12 @@ export const uploadvideo = async(req, res, next)=>{
         }
     }
 }
+
+export const getAllvideos = async(req, res)=>{
+        try {
+            const files = await videoFiles.find();
+            res.status(200).send(files);
+        } catch (error) {
+            res.status(404).send(error.message);
+        }
+}

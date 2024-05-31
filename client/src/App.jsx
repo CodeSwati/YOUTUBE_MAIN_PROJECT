@@ -9,7 +9,8 @@ import DrawerSidebar from './components/LeftSidebar/DrawerSidebar';
 import CreateEditChannel from './pages/Channel/CreateEditChannel';
 import { useDispatch } from 'react-redux';
 import { fetchAllChannel } from './actions/channelUser';
-import VideoUpload from './pages/VideoUpload/VideoUpload'
+import VideoUpload from './pages/VideoUpload/VideoUpload';
+import { getAllVideo } from './actions/video';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 
   useEffect(()=>{
     dispatch(fetchAllChannel());
+    dispatch(getAllVideo());
   },[dispatch]);
 
    const [toggleDrawerSidebar, setToggleDrawerSidebar] = useState({

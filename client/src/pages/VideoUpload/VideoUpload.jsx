@@ -23,9 +23,8 @@ function VideoUpload({setViduploadpage}) {
       const percentage = Math.floor(((loaded/1000)*100)/(total/1000));
       setProgress(percentage);
       if(percentage=== 100){
-        setTimeout(function() {
-          
-        }, 3000);
+        setTimeout(function() { }, 3000);
+        setViduploadpage(false);
       }
      }
   }

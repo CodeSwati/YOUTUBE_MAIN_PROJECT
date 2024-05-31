@@ -1,35 +1,49 @@
 import React from 'react'
 import vid from '../../components/Video/vid.mp4'
+import moment from 'moment'
 import './VideoPage.css'
+import {useSelector} from 'react-redux'
 import LikeWatchLaterSaveBtns from './LikeWatchLaterSaveBtns'
 import Comments from '../../components/Comments/Comments'
+import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 function VideoPage() {
+  const {vid} = useParams();
+  
+  // const channels = useSelector(state => state?.channelReducers);
+    // const currentChannel = channels.filter(c=>c._id === vid)[0];
+  const vids = useSelector(state => state.videoReducer);
+  const vv = vids?.data.filter(q=> q._id=== vid)[0];
+  console.log(vv);
   return (
     <>
      <div className='container_videopage'>
         <div className='container2_videopage'>
            <div className="video_display_screen_videopage">
-               <video src={vid} className={"video_showvideo_videopage"}
+               <video src={`http://localhost:5500/${vv?.filePath}` }
+               className={"video_showvideo_videopage"}
                controls autoPlay
                >
                </video>
                <div className="video_details_videopage">
                   <div className="video_btns_title_videopage_cont">
-                    <p className="video_title_videopage">Title</p>
+                    <p className="video_title_videopage">{vv?.videoTitle}</p>
                     <div className="views_date_btns_videopage">
                         <div className="views_videopage">
-                                 5 views <div className="dot"></div> uploaded 1 year ago
+                                 {vv?.Views} views <div className="dot"></div> 
+                                  {moment(vv?.createdAt).fromNow()}
+
                         </div>  
                         <LikeWatchLaterSaveBtns/>
                     </div>
                   </div>
                   
-                  <div className="chanel_details_videopage">
+                  <Link to={`/channel/${vv?.videoChannel}`} className="chanel_details_videopage">
                     <b className='chanel_logo_videopage'>
-                        <p>C</p>
+                        <p>{vv?.fileName.charAt(0).toUpperCase()}</p>
                     </b>
-                    <p className="chanel_name_videopage">Channel name</p>
-                  </div>
+                    <p className="chanel_name_videopage">{vv?.Uploder}</p>
+                  </Link>
                   <div className="comments_videopage">
                     <h2>
                         <u>Comments</u>
