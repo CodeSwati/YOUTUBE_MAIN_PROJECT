@@ -1,13 +1,13 @@
 import React from 'react'
 import './Home.css'
-import vid from '../../components/Video/vid.mp4'
+// import vid from '../../components/Video/vid.mp4'
 import LeftSidebar from '../../components/LeftSidebar/LeftSidebar'
 import ShowVideoGrid from '../../components/ShowVideoGrid/ShowVideoGrid'
 import { useSelector } from 'react-redux'
 
 function Home() {
 
-  const vids = useSelector(state => state.videoReducer)?.data;
+  const vids = useSelector(state => state.videoReducer)?.data?.filter(q=> q).reverse();
   // console.log(videosFile);
   // const vids =[
   //   {

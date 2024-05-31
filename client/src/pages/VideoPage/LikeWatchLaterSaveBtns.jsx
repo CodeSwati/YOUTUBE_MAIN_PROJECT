@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {BsThreeDots} from 'react-icons/bs'
 import {MdPlaylistAddCheck} from 'react-icons/md'
 import {AiFillLike, AiOutlineLike ,AiFillDislike,  AiOutlineDislike} from 'react-icons/ai'
 import {RiPlayListAddFill, RiHeartAddFill, RiShareForwardLine} from 'react-icons/ri'
 import './LikeWatchLaterSaveBtns.css'
-function LikeWatchLaterSaveBtns() {
+import { useDispatch, useSelector } from 'react-redux'
+import { likeVideo } from '../../actions/video'
+import { addTolikedVideo } from '../../actions/likedVideo'
 
+
+function LikeWatchLaterSaveBtns({vv, vid}) {
+
+  const currentUser = useSelector(state => state?.currentUserReducer)
+  const dispatch =useDispatch();
   const [savevideo, setSavevideo]= useState(true);
   const [dislikebtn, setDislikebtn] = useState(false);
   const [likebtn, setLikebtn] = useState(false);
+
+  const likedVideoList = useSelector(state => state.likedVideoReducer);
+  useEffect(()=>{
+    likedVideoList?.data.filter(q=> q?.videoId === vid && q?.Viewer === currentUser?.result._id)
+    .map(m=> setLikebtn(true) )
+  }, [])
 
   const toggleSavedVideo = ()=>{
     if(savevideo){
@@ -17,18 +30,51 @@ function LikeWatchLaterSaveBtns() {
       setSavevideo(true);
     }
   }
-  const toggleLikeBtn =()=>{
-    if(likebtn){
-      setLikebtn(false);
-    }else{
-      setLikebtn(true);
+  const toggleLikeBtn =(e, lk)=>{
+    if (currentUser) {
+      if(likebtn){
+        setLikebtn(false);
+        dispatch(likeVideo({
+          id: vid, 
+          Like: lk - 1,
+        })
+      );
+      }else{
+        setLikebtn(true);
+        dispatch(likeVideo({
+          id: vid, 
+          Like: lk + 1,
+        })
+      );
+      dispatch(addTolikedVideo({
+        videoId : vid,
+        Viewer : currentUser?.result._id,
+      }))
+      setDislikebtn(false);
+    }
+    } else{
+      alert("plz login to give a like")
     }
   }
-  const toggleDislikeBtn =()=>{
-    if(dislikebtn){
-      setDislikebtn(false);
-    }else{
-      setDislikebtn(true);
+  const toggleDislikeBtn =(e, lk)=>{
+
+    if (currentUser) {
+      if(dislikebtn){
+        setDislikebtn(false);
+      }else{
+        setDislikebtn(true);
+        if (likebtn) {
+          dispatch(likeVideo({
+            id: vid, 
+            Like: lk - 1,
+          })
+        );
+          
+        }
+        setLikebtn(false);
+    }
+    } else{
+      alert("plz login to give a dislike")
     }
   }
 
@@ -39,7 +85,7 @@ function LikeWatchLaterSaveBtns() {
        </div>
 
        <div className="btn_videopage">
-         <div className="like_videopage" onClick={()=>toggleLikeBtn()}>
+         <div className="like_videopage" onClick={(e)=>toggleLikeBtn(e,vv?.Like)}>
           {
             likebtn ?
             ( <>
@@ -49,10 +95,10 @@ function LikeWatchLaterSaveBtns() {
             <AiOutlineLike size={22} className='btns_videopage'/>
             </> )
           } 
-          <b>1</b>       
+          <b>{vv?.Like}</b>       
         </div>
 
-        <div className="like_videopage" onClick={()=> toggleDislikeBtn()}>
+        <div className="like_videopage" onClick={(e)=> toggleDislikeBtn(e, vv?.Like)}>
           {
             dislikebtn ?
             ( <>

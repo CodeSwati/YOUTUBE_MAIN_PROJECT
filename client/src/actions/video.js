@@ -5,6 +5,7 @@ export const uploadvideo=(videodata) =>async(dispatch)=>{
         const {filedata, fileoptions} = videodata;
         const {data} = await api.uploadvideo(filedata, fileoptions);
         dispatch({type: 'POST_VIDEO', data})
+        dispatch(getAllVideo());
     } 
     catch(error){
         alert(error.response.data.message)
@@ -18,4 +19,15 @@ export const getAllVideo =()=>async(dispatch)=>{
        } catch (error) {
         console.log(error);
     }
+}
+
+export const likeVideo =(LikeDate)=> async (dispatch)=>{
+     try {
+        const{id, Like} =  LikeDate;
+        const {data} = await api.likeVideo(id, Like);
+        dispatch({type : "POST_LIKE" , payload : data});
+         dispatch(getAllVideo());
+     } catch (error) {
+      console.log(error);  
+     }
 }

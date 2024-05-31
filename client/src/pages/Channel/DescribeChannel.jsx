@@ -5,7 +5,8 @@ import {useSelector} from 'react-redux'
 function DescribeChannel({setEditcreateChannelbtn , Cid, setViduploadpage}) {
 
     const channels = useSelector(state => state?.channelReducers);
-    const currentChannel = channels.filter(c=>c._id === Cid)[0];
+
+    const currentChannel = channels.filter((c)=> c._id === Cid)[0];
     const currentUser = useSelector(state => state?.currentUserReducer)
   return (
     <div className='container3_channel'>

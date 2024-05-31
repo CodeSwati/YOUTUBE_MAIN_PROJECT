@@ -27,11 +27,11 @@ const videoFileSchema = new mongoose.Schema(
             required : true,
         },
         Like:{
-            type: String,
+            type: Number,
             default:0,
         },
         Views:{
-            type: String,
+            type: Number,
             default:0,
         },
         Uploder:{

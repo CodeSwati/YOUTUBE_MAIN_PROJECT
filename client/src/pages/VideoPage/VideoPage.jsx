@@ -13,6 +13,7 @@ function VideoPage() {
   // const channels = useSelector(state => state?.channelReducers);
     // const currentChannel = channels.filter(c=>c._id === vid)[0];
   const vids = useSelector(state => state.videoReducer);
+  // console.log(vids);
   const vv = vids?.data.filter(q=> q._id=== vid)[0];
   console.log(vv);
   return (
@@ -34,7 +35,7 @@ function VideoPage() {
                                   {moment(vv?.createdAt).fromNow()}
 
                         </div>  
-                        <LikeWatchLaterSaveBtns/>
+                        <LikeWatchLaterSaveBtns vv={vv} vid={vid}/>
                     </div>
                   </div>
                   

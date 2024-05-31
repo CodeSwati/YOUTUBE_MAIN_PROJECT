@@ -1,14 +1,16 @@
 import React from 'react'
 import ShowVideoList from '../ShowVideoList/ShowVideoList'
 
-function WHLVideolist({page, VideoList}) {
+function WHLVideolist({page,currentUser ,VideoList}) {
+
+  console.log(VideoList);
   return (
     <>
     {
-        VideoList.map(m => { 
+        VideoList?.data?.filter(q=> q?.Viewer === currentUser).reverse().map(m => { 
             return (
                 <>
-                <ShowVideoList videoid={m._id} key={m._id}/>
+                <ShowVideoList videoId={m?.videoId} key={m?._id}/>
                 </>
             )
         })

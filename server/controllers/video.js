@@ -11,11 +11,11 @@ export const uploadvideo = async(req, res, next)=>{
                  fileType: req.file.mimetype,
                  fileSize: req.file.size,
                  videoChannel: req.body.channel,
-                 Uploder: req.body.Uploder
+                 Uploder: req.body.Uploder,
             });
 
             await file.save();
-            res.status(201).send("file uploaded successfully")
+            res.status(200).send("file uploaded successfully")
         } catch (error) {
             res.status(400).send(error.message)
         }
