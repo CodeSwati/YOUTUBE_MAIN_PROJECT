@@ -7,13 +7,24 @@ function WHLVideolist({page,currentUser ,VideoList}) {
   return (
     <>
     {
-        VideoList?.data?.filter(q=> q?.Viewer === currentUser).reverse().map(m => { 
-            return (
-                <>
-                <ShowVideoList videoId={m?.videoId} key={m?._id}/>
-                </>
-            )
-        })
+      currentUser ? (  <> 
+        
+        {
+            VideoList?.data?.filter(q=> q?.Viewer === currentUser).reverse().map(m => { 
+              return (
+                  <>
+                  <ShowVideoList videoId={m?.videoId} key={m?._id}/>
+                  </>
+              )
+            })
+        }
+      
+       </> )  : ( <> 
+
+       <h2 style={{color: "white"}}> Plz Login to watch your {page} </h2>
+       
+        </>)
+       
     }
     </>
   )

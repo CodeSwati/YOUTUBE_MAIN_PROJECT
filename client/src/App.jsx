@@ -13,6 +13,7 @@ import VideoUpload from './pages/VideoUpload/VideoUpload';
 import { getAllVideo } from './actions/video';
 import { getAllLikedVideo } from './actions/likedVideo';
 import { getAllwatchLater } from './actions/watchLater';
+import { getAllHistory } from './actions/History';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     dispatch(getAllVideo());
     dispatch(getAllLikedVideo());
     dispatch(getAllwatchLater());
+    dispatch(getAllHistory());
   },[dispatch]);
 
    const [toggleDrawerSidebar, setToggleDrawerSidebar] = useState({

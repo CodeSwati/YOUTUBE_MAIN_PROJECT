@@ -2,11 +2,22 @@ import React from 'react'
 import LeftSidebar from '../LeftSidebar/LeftSidebar'
 import './WHL.css'
 import WHLVideolist from './WHLVideolist'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearHistory } from '../../actions/History';
 
 function WHL({page, VideoList}) {
 
   const currentUser = useSelector(state => state?.currentUserReducer);
+  const dispatch = useDispatch();
+
+  const handleClearHistory = ()=>{
+    if (currentUser) {
+      dispatch(clearHistory({
+        userId: currentUser?.result._id
+      }));
+    }
+  }
+
   return (
 
 
@@ -19,7 +30,7 @@ function WHL({page, VideoList}) {
                     <b>Your {page} shown here </b>
                     {
                       page==="History" &&
-                      <div className="clear_history_btn">
+                      <div className="clear_history_btn" onClick={()=> handleClearHistory()}>
                       Clear History
                       </div>
                     } 
