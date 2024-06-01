@@ -7,32 +7,32 @@ function WatchHistory() {
     {
       _id : 1,
       video_src: vid,
-      chanel: "cdd",
-      uploader: "abc",
+      channel: "cdd",
+      Uploder: "abc",
       title: "video 1",
       description: "discription of video 1"
     },
     {
       _id : 2,
       video_src: vid,
-      chanel: "cdd",
-      uploader: "abc",
+      channel: "cdd",
+      Uploder: "abc",
       title: "video 2",
       description: "discription of video 2"
     },
     {
       _id : 3,
       video_src: vid,
-      chanel: "add",
-      uploader: "abc",
+      channel: "add",
+      Uploder: "abc",
       title: "video 3",
       description: "discription of video 3"
     },
     {
       _id : 4,
       video_src: vid,
-      chanel: "add",
-      uploader: "abc",
+      channel: "add",
+      Uploder: "abc",
       title: "video 4",
       description: "discription of video 4"
     },

@@ -18,3 +18,13 @@ export const getAllLikedVideo =()=>async(dispatch)=>{
         console.log(error);
     }
 }
+
+export const deletelikedVideo = (likedVideoData) => async(dispatch)=>{
+    try {
+        const {videoId, Viewer} = likedVideoData;
+        await api.deletelikedVideo(videoId, Viewer);
+        dispatch(getAllLikedVideo());
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -3,10 +3,15 @@ import authReducer from "./auth";
 import currentUserReducer from "./currentUser";
 import channelReducers from "./channel";
 import videoReducer from "./Video";
+import watchLaterReducer from "./watchLater";
+import likedVideoReducer from "./likedVideo";
+
 
 export default combineReducers({
     authReducer, 
     currentUserReducer,
     channelReducers,
-    videoReducer
+    videoReducer,
+    likedVideoReducer,
+    watchLaterReducer,
 });
