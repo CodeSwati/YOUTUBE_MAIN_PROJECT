@@ -1,5 +1,5 @@
 import React from 'react'
-import vid from '../../components/Video/vid.mp4'
+// import vid from '../../components/Video/vid.mp4'
 import WHL from '../../components/WHL/WHL';
 import { useSelector } from 'react-redux';
 

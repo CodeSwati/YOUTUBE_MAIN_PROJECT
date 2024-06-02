@@ -3,7 +3,7 @@ import * as api from '../api'
 export const postComment = (CommentData) => async(dispatch)=>{
     try {
         const {data} = await api.postComment(CommentData);
-        console.log(CommentData);
+        // console.log(CommentData);
         dispatch({type:"POST_COMMENT",payload: data});
         dispatch (getAllComment());
     } catch (error) {

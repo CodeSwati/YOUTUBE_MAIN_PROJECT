@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 
 export const  postComment = async(req, res)=>{
     const commentData = req.body;
-    const postComment = new comment(commentData);
+    const postcomment = new comment(commentData);
     
     try {
-        await postComment.save();
+        await postcomment.save();
         res.status(200).json('posted the watchLater')
         // console.log('Done');
     } catch (error) {

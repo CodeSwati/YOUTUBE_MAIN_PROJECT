@@ -16,7 +16,7 @@ function VideoPage() {
     // const currentChannel = channels.filter(c=>c._id === vid)[0];
   const vids = useSelector(state => state.videoReducer);
   // console.log(vids);
-  const vv = vids?.data.filter(q=> q._id=== vid)[0];
+  const vv = vids.data?.filter(q=> q._id=== vid)[0];
   console.log(vv);
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state?.currentUserReducer);
@@ -44,6 +44,7 @@ function VideoPage() {
     }
     handleViews();
   } , []);
+  
   return (
     <>
      <div className='container_videopage'>

@@ -19,7 +19,8 @@ function DescribeChannel({setEditcreateChannelbtn , Cid, setViduploadpage}) {
             <b>{currentChannel?.name}</b>
             <p>{currentChannel?.desc}</p>
         </div>
-       { currentUser?.result._id === currentChannel?._id && <>
+       { currentUser?.result._id === currentChannel?._id &&
+        <>
           
         <p className='editbtn_channel' onClick={()=> {setEditcreateChannelbtn(true)}}>
             <FaEdit />

@@ -2,6 +2,7 @@ import React from 'react'
 import ShowVideoList from '../ShowVideoList/ShowVideoList'
 
 function WHLVideolist({page,currentUser ,VideoList}) {
+  
 
   console.log(VideoList);
   return (

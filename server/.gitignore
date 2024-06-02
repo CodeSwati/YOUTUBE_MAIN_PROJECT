@@ -11,3 +11,8 @@ npm i jsonwebtoken
 npm i mongoose
 npm i multer
 npm i nodemon
+
+
+.env
+
+/node_modules

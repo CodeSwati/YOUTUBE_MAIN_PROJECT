@@ -5,10 +5,11 @@ import { useDispatch, useSelector} from "react-redux"
 import {postComment} from "../../actions/comments"
 function Comments({videoId}) {
 
-   const currentUser = useSelector(state => state?.currentUserReducer);
     const [commenttext, setCommenttext] = useState(" ");
+    const currentUser = useSelector(state => state?.currentUserReducer);
+
     
-    const commentsList =  useSelector(s=> s.commentReducer);
+    const commentsList =  useSelector(s=>s.commentReducer);
 
    //  const commentsList =[
    //  { 
@@ -32,9 +33,8 @@ function Comments({videoId}) {
    const dispatch = useDispatch();
    
     const handleOnsubmit =(e)=>{
-       
+      e.preventDefault();
       if (currentUser) {
-         e.preventDefault();
          if (!commenttext) {
           alert("plz type your comment!")
          }else {
@@ -55,9 +55,11 @@ function Comments({videoId}) {
   return (
     <>
      <form className='comments_sub_form_comments' onSubmit={handleOnsubmit}>
-         <input type='text ' placeholder='add comment....' className='comment_ibox'
-         value={commenttext}
-         onChange={e=> setCommenttext(e.target.value)} />
+         <input type='text ' 
+         placeholder='add comment....' 
+         className='comment_ibox'
+         onChange={e=> setCommenttext(e.target.value)}
+         value={commenttext} />
          <input type='submit' value='add' className='comments_add_btn_comments'/>
      </form>
 
