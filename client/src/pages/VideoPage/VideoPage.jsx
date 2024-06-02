@@ -17,7 +17,7 @@ function VideoPage() {
   const vids = useSelector(state => state.videoReducer);
   // console.log(vids);
   const vv = vids?.data.filter(q=> q._id=== vid)[0];
-  // console.log(vv);
+  console.log(vv);
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state?.currentUserReducer);
   const handleHistory =()=> {
@@ -77,7 +77,7 @@ function VideoPage() {
                     <h2>
                         <u>Comments</u>
                     </h2>
-                  <Comments/>
+                  <Comments  videoId={vv._id}/>
                     
                   </div>
                </div>
