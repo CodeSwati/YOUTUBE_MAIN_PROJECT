@@ -50,7 +50,10 @@ function VideoPage() {
      <div className='container_videopage'>
         <div className='container2_videopage'>
            <div className="video_display_screen_videopage">
-               <video src={`http://localhost:5500/${vv?.filePath}` }
+               <video
+                // src={`http://localhost:5500/${vv?.filePath}` }
+                src={`https://youtube-main-project.onrender.com/${vv?.filePath}` }
+
                className={"video_showvideo_videopage"}
                controls autoPlay
                >
