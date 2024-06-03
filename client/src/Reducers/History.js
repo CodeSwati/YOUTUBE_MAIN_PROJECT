@@ -3,10 +3,10 @@ const HistoryReducer = (state = {data: null}, action)=>{
     {
 
         case 'POST_HISTORY':
-            return {...state, data: action?.data};
+            return {...state};
 
         case "FETCH_ALL_HISTORY_VIDEOS" :
-        return {...state, data: action?.data};
+        return {...state, data: action.payload};
 
         
         default:

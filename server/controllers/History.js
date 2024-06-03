@@ -7,8 +7,9 @@ export const HistoryController = async(req, res)=>{
 
     // console.log(HistoryData);
     const addToHistory = new History(HistoryData);
+
     
-    try {
+     try {
         await addToHistory.save();
         res.status(200).json('added to History')
         // console.log('Done');
@@ -18,6 +19,8 @@ export const HistoryController = async(req, res)=>{
 }
 
 export const getAllHistoryController = async(req, res)=>{
+
+    
     try {
         const files = await History.find();
         res.status(200).send(files);
@@ -28,7 +31,8 @@ export const getAllHistoryController = async(req, res)=>{
 
 export const deleteHistoryController = async (req, res)=> {
     const {userId : userId} = req.params ;
-    console.log(userId);
+    
+    // console.log(userId);
     try {
         await History.deleteMany({
             Viewer : userId

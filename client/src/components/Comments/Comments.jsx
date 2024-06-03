@@ -55,11 +55,13 @@ function Comments({videoId}) {
   return (
     <>
      <form className='comments_sub_form_comments' onSubmit={handleOnsubmit}>
+
          <input type='text ' 
          placeholder='add comment....' 
          className='comment_ibox'
-         onChange={e=> setCommenttext(e.target.value)}
-         value={commenttext} />
+         onChange={(e)=> setCommenttext(e.target.value)}
+         value={commenttext} 
+         />
          <input type='submit' value='add' className='comments_add_btn_comments'/>
      </form>
 

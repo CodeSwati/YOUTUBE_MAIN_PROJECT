@@ -31,7 +31,7 @@ export const deleteComment = async (req, res)=> {
     }
     // console.log(videoId , Viewer);
     try {
-        await comment.findByIdAndRemove(_id);
+        await comment.findByIdAndDelete (_id);
 
         res.status(200).json({message : "deleted comment"})
     } catch (error) {
@@ -43,7 +43,7 @@ export const editComment = async (req, res)=> {
     const {id: _id} = req.params ;
     const {commentbody} = req.body;
     try {
-        const updateComment = await comment.findByIdAndUpadate(
+        const updateComment = await comment.findByIdAndUpdate(
             _id,
             {
                 $set : {"commentbody": commentbody}

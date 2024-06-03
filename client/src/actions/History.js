@@ -3,7 +3,7 @@ import * as api from '../api'
 export const addToHistory = (HistoryData) => async(dispatch)=>{
     try {
         const {data} = await api.addToHistory(HistoryData);
-        console.log(data);
+        // console.log(HistoryData);
         dispatch({type:"POST_HISTORY", data});
         dispatch (getAllHistory());
     } catch (error) {
