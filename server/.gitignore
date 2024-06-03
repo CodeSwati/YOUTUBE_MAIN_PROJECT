@@ -1,18 +1,3 @@
-install packages like ->
-npm i express
-npm i bcryptjs
-npm i body-parser
-npm i cors
-npm i dotenv
-npm i env
-npm i express-fileupload
-npm i fs
-npm i jsonwebtoken
-npm i mongoose
-npm i multer
-npm i nodemon
-
-
 .env
 
 /node_modules
