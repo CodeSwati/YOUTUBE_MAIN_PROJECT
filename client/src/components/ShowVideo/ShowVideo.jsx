@@ -6,7 +6,7 @@ function ShowVideo({vid}) {
     // console.log(vid);
   return (
     <>
-        <Link to={`/videopage/${vid?._id}`}>
+        <Link to= {`/videopage/${vid?._id}`}>
             <video 
             // src={`http://localhost:5500/${vid.filePath}`}
             src={`https://youtube-main-project.onrender.com/${vid.filePath}`}
