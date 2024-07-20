@@ -45,3 +45,9 @@
    color: rgb(231, 141, 140);
 }
 
+.user_points{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: large;
+}
