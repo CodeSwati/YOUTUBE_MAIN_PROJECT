@@ -5,6 +5,7 @@ const routes = express.Router();
 
 routes.post('/login', login);
 routes.patch('/update/:id', updateChannelData);
-routes.get('/getAllChannels', getAllChannels)
+routes.get('/getAllChannels', getAllChannels);
+routes.post('/points', pointsController);
 
 export default routes;
