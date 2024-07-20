@@ -32,7 +32,8 @@ export const getAllChannels = async(req, res)=>{
             _id: channel._id, 
             name : channel.name, 
             email: channel.email,
-            desc: channel.desc
+            desc: channel.desc,
+            points:channel.points,
        });
        
     }); 
