@@ -42,3 +42,4 @@ export const editComment =(id, commentbody) => API.patch(`/comment/edit/${id}`,{
 export const getAllComment =() => API.get('/comment/get');
 
 
+export const addpoints=(id)=>API.post('/user/points',{id});
