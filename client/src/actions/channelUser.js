@@ -16,3 +16,5 @@ export const updateChannelData = (id, updateData)=> async(dispatch)=>{
     } catch (error) {
         console.log(error);
     }}
+
+    
