@@ -7,6 +7,7 @@ import {applyMiddleware, compose} from 'redux'
 import {createStore} from 'redux'
 import {thunk} from 'redux-thunk'
 import Reducers from "./Reducers/index.js";
+import { SocketProvider } from "./provider/Socketprovider";
 // import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
@@ -14,7 +15,9 @@ const store = createStore(Reducers, compose(applyMiddleware(thunk)))
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
         <React.StrictMode>
-        <App />
+        <SocketProvider>
+           <App />
+        </SocketProvider>
         </React.StrictMode>
     
   </Provider>
