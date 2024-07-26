@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineHome } from "react-icons/ai";
-import {MdOutlineExplore, MdOutlineSubscriptions, MdOutlineVideoLibrary} from "react-icons/md";
+import {MdOutlineExplore, MdOutlineSubscriptions, MdOutlineVideoLibrary, MdVideoCall} from "react-icons/md";
 import './LeftSidebar.css';
 import {NavLink} from "react-router-dom"
 
@@ -23,6 +23,10 @@ function LeftSidebar() {
             <MdOutlineVideoLibrary size={22} className='icon_sidebar'/>
             <div className="text_sidebar_icon">Library</div>
         </NavLink>
+        <NavLink to={'/videocall'} className='icon_sidebar_div'>
+            <MdVideoCall size={22} className="icon_sidebar" />
+            <div className="text_sidebar_icon">Videocall</div>
+       </NavLink>
     </div>
   )
 }
