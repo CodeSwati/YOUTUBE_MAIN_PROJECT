@@ -12,7 +12,7 @@ import http from "http";
 
 dotenv.config();
 
-const app = express()
+const app = express();
 
 app.use(cors());
 
@@ -35,6 +35,11 @@ app.use('/video', videoRoutes)
 app.use('/comment', commentsRoutes);
 
 const port = process.env.PORT || 5500;
+
+app.listen( port , ()=>{
+  console.log(`server running on the port ${port}`)
+});
+const db_url = process.env.CONNECTION_URL;
 
 const emailToSocketIdMap = new Map();
 const socketidToEmailMap = new Map();
@@ -76,10 +81,7 @@ io.on("connection", (socket) => {
   });
 });
 
-app.listen( port , ()=>{
-    console.log(`server running on the port ${port}`)
-});
-const db_url = process.env.CONNECTION_URL;
+
 //console.log(db_url);
 mongoose.connect(db_url, {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
     console.log("mongo database connected")
