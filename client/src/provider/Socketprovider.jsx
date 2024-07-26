@@ -9,7 +9,7 @@ export const useSocket = () => {
 };
 
 export const SocketProvider = (props) => {
-  const socket = useMemo(() => io("https://ytbackend-u14j.onrender.com"), []);
+  const socket = useMemo(() => io("https://youtube-main-project.onrender.com"), []);
 
   return (
     <SocketContext.Provider value={socket}>
